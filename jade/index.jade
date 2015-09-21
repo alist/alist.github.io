@@ -1,0 +1,16 @@
+extends layout
+
+block body
+  mixin list
+    ul
+      li foo
+      li bar
+      li baz
+
+  -
+    list = [["dos", "uno","shay"], "Dos", "Tres",
+            "Cuatro", "Cinco", "Seis"]
+
+  for item in list
+    a=item
+    +list
