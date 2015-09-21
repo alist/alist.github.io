@@ -1,16 +1,15 @@
 extends layout
 
 block body
-  mixin list
-    ul
-      li foo
-      li bar
-      li baz
+  mixin piece(data)
+    a(href=data[1])
+      img(src="./img/#{data[0]}.jpg")
 
   -
-    list = [["dos", "uno","shay"], "Dos", "Tres",
-            "Cuatro", "Cinco", "Seis"]
+    list = [["knock", "https://github.com/headtalk/knock"], 
+      ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/"], 
+      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"], 
+      ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe"]]
 
   for item in list
-    a=item
-    +list
+    +piece(item)
