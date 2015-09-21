@@ -2,14 +2,21 @@ extends layout
 
 block body
   mixin piece(data)
-    a(href=data[1])
-      img(src="./img/#{data[0]}.jpg")
-
+      div.col-md-6.col-sm-12.piece
+        a(href=data[1])
+          div.image(style="background-image : URL(./img/#{data[0]}.jpg);")
   -
     list = [["knock", "https://github.com/headtalk/knock"], 
       ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/"], 
-      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"], 
-      ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe"]]
-
-  for item in list
-    +piece(item)
+      ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe"],
+      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"]]
+    
+  .hundeepiece.stardust
+    .container
+      row
+        div.col-md-10.col-md-offset-1
+          for index in [[0,1], [2,3]]
+            row
+              for i in index
+                +piece(list[i])
+    .fixBottom.aurora
