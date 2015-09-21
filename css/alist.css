@@ -9,7 +9,7 @@ body {
   width: 100%;
   margin: 0 0;
   padding: 0 0;
-  font-family: 'Open Sans', 'Helvetica-Light', 'Arimo', 'Helvetica Neue', sans-serif;
+  font-family: 'HelveticaNeue-UltraLight', sans-serif;
   color: #fff;
   background-color: #fff;
 }
@@ -31,7 +31,7 @@ body {
   width: 100%;
 }
 .fixBottom {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 }
 .hundeepiece {
@@ -39,18 +39,17 @@ body {
 }
 .piece {
   margin-top: 20px;
+  padding: 10px;
 }
-.image {
-  min-width: 100%;
+.piece img {
+  width: 100%;
   height: auto;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
 }
-.image:hover {
+.piece img:hover {
   opacity: 0.7;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: alpha(opacity=70);
+}
+.center {
+  text-align: center;
 }

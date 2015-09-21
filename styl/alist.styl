@@ -11,7 +11,7 @@ body
   width 100%
   margin 0 0
   padding 0 0
-  font-family 'Open Sans', 'Helvetica-Light', 'Arimo', 'Helvetica Neue', sans-serif
+  font-family 'HelveticaNeue-UltraLight', sans-serif
   color white
   background-color white
 
@@ -27,7 +27,7 @@ body
   width 100%
 
 .fixBottom
-  position absolute
+  position fixed
   bottom 0px
 
 .hundeepiece
@@ -35,12 +35,13 @@ body
 
 .piece
   margin-top 20px
+  padding 10px
 
-.image
-  min-width 100%
+.piece img
+  width 100%
   height auto
-  background-size contain
-  background-position 50%
-  background-repeat no-repeat
   &:hover
     opacity 0.7
+
+.center
+  text-align center

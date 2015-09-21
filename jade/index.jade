@@ -4,7 +4,7 @@ block body
   mixin piece(data)
       div.col-md-6.col-sm-12.piece
         a(href=data[1])
-          div.image(style="background-image : URL(./img/#{data[0]}.jpg);")
+          image(src="./img/#{data[0]}.jpg")
   -
     list = [["knock", "https://github.com/headtalk/knock"], 
       ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/"], 
@@ -12,11 +12,13 @@ block body
       ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"]]
     
   .hundeepiece.stardust
+    .fixBottom.aurora
     .container
       row
         div.col-md-10.col-md-offset-1
+          h1.center My Work
+          h2.center Alexander Hoekje List
           for index in [[0,1], [2,3]]
-            row
+            row.pieceRow
               for i in index
                 +piece(list[i])
-    .fixBottom.aurora
