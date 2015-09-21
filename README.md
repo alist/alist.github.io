@@ -7,3 +7,5 @@ alist's github pages
 `npm install nib` for stylus dependencies
 
 `stylus styl/alist.styl -w -o css/`
+
+tested locally using `python -m SimpleHTTPServer 3000`
