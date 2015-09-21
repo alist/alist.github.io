@@ -1,3 +1,13 @@
+#OSX and vim
+.c9revisions
+node_modules
+npm-debug.log
+*.swp
+*.swo
+*.swq
+.DS_Store
+
+#Node
 # Logs
 logs
 *.log
