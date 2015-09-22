@@ -21,6 +21,29 @@ body {
   background-size: 399px;
   background-position: center center;
 }
+.navIcons {
+  height: 60px;
+}
+.navIcons div {
+  height: 60px;
+  background-color: clear;
+  background-repeat: no-repeat;
+  -webkit-background-size: 30px;
+  -moz-background-size: 30px;
+  background-size: 30px;
+  background-position: center center;
+}
+.navIcons div:hover {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.linkedinBG {
+  background-image: url("/img/linkedin2x.png");
+}
+.twitterBG {
+  background-image: url("/img/twitter2x.png");
+}
 .aurora {
   background: -webkit-linear-gradient(bottom, rgba(255,255,255,0.3), rgba(0,0,0,0) 100%);
   background: -moz-linear-gradient(bottom, rgba(255,255,255,0.3), rgba(0,0,0,0) 100%);
@@ -38,7 +61,7 @@ body {
   min-height: 100%;
 }
 .content {
-  margin-bottom: 7%;
+  padding-bottom: 7%;
 }
 .pieces {
   margin-top: 30px;

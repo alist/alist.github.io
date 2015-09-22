@@ -15,9 +15,9 @@ block body
     
   .hundeepiece.stardust
     .fixBottom.aurora
-    .container
+    .container.content
       row
-        div.col-md-10.col-md-offset-1.content
+        div.col-md-10.col-md-offset-1
           h1.center My Work
           h2.center Alexander Hoekje List
           .pieces
@@ -25,3 +25,10 @@ block body
               row
                 for i in index
                   +piece(list[i])
+      row.navIcons
+        .col-xs-4.col-xs-offset-2.col-md-2.col-md-offset-4
+          a(href='https://linkedin.com/in/alistim')
+            .linkedinBG
+        .col-xs-4.col-md-2.col-md-offset-0
+          a(href='https://twitter.com/ayylist')    
+            .twitterBG      
