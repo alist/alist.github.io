@@ -1,5 +1,10 @@
 @import '../node_modules/nib'
 
+screen-sm-min = 760px
+screen-md-min = 960px
+screen-lg-min = 1200px
+screen-hg-min = 1400px
+
 html
   height 100%
   width 100%
@@ -51,6 +56,8 @@ body
 
 .content
   padding-bottom 60px
+  @media (min-width: screen-md-min)
+    padding-bottom 7%
 
 .pieces
   margin-top 30px
