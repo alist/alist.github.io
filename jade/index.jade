@@ -9,7 +9,12 @@ block body
   mixin audio(data)
     .audioBox
       .row
-        p.left=data[0]
+          .left
+            p.left
+              =data[0]
+              .share
+                a(href="##{data[1]}", title="share") __
+                
         p.right
           a(href=data[2]) Discuss on Dropbox
       .row
@@ -62,5 +67,5 @@ block body
           a(href='https://linkedin.com/in/alistim')
             .linkedinBG
         .col-xs-4.col-md-2.col-md-offset-0
-          a(href='https://twitter.com/ayylist')    
+          a(href='https://twitter.com/alistmit')    
             .twitterBG      
