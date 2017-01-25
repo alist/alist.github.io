@@ -13,6 +13,13 @@ body {
   color: #fff;
   background-color: #fff;
 }
+a {
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 .stardust {
   background-image: url("/img/stardust.png");
   background-repeat: repeat;
@@ -66,6 +73,18 @@ body {
     padding-bottom: 7%;
   }
 }
+.center {
+  text-align: center;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+h3 {
+  margin-top: 30px;
+}
 .pieces {
   margin-top: 30px;
 }
@@ -81,6 +100,47 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: alpha(opacity=70);
 }
-.center {
-  text-align: center;
+.audioBox {
+  width: 100%;
+  height: 210px;
+}
+.dim {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.controlLayer {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  width: 100%;
+}
+.controlLayer:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.playBtn {
+  background-image: url("/img/playBtn2x.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: 128px;
+  -moz-background-size: 128px;
+  background-size: 128px;
+  background-position: center center;
+}
+.pauseBtn {
+  background-image: url("/img/pauseBtn2x.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: 50px;
+  -moz-background-size: 50px;
+  background-size: 50px;
+  background-position: right bottom;
+}
+.audio {
+  height: 128px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.1);
+}
+.audio p {
+  font-size: 15px;
 }

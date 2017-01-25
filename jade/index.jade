@@ -2,29 +2,56 @@ extends layout
 
 block body
   mixin piece(data)
-      div.col-md-6.col-sm-12.piece
-        a(href=data[1])
-          image(src="./img/#{data[0]}.jpg")
+    div.col-md-6.col-sm-12.piece
+      a(href=data[1])
+        image(src="./img/#{data[0]}.jpg")
+
+  mixin audio(data)
+    .audioBox
+      .row
+        p.left=data[0]
+        p.right
+          | Discuss it on 
+          a(href=data[2]) Dropbox
+      .row
+        a(href="#")
+          .controlLayer
+            .audio.playBtn.dim(id=data[1],waveformdata=data[3] ? data[3] : null)
   -
-    list = [["magnet", "https://www.youtube.com/watch?v=vwkm83U0g0o"],
+    list = [["magnet", "http://usemagnet.com"], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
       ["headtalk", "http://headtalk.io"],
       ["knock", "https://github.com/headtalk/knock"], 
       ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/"], 
       ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe"],
       ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"]]
     
+  - audioList = [["4 Hours in Tokyo (clip)","fourhoursintokyoclip","https://www.dropbox.com/s/fsnlc164id5d833/fourhoursintokyo.m4a"],["Grandma Nelson's Story: To California","gmatocalifornia"],["Grandma Nelson's Story: Willmington 10","gmawillmington10"], ["Grandma Nelson's Story: High School","gmahighschool"]]
+    
   .hundeepiece.stardust
     .fixBottom.aurora
     .container.content
       row
         div.col-md-10.col-md-offset-1
-          h1.center My Work
           h2.center Alexander Hoekje List
+          h3.center My Work
           .pieces
             for index in [[0,1], [2,3], [4,5]]
               row
                 for i in index
                   +piece(list[i])
+      row
+        div.col-md-10.col-md-offset-1         
+          h3.center Audio Clips
+          for clip in audioList
+            +audio(clip)
+            
+      //- row
+      //-   div.col-md-10.col-md-offset-1
+      //-     h3.center Photos
+      //- row
+      //-   div.col-md-10.col-md-offset-1
+      //-     h3.center Opinions
+
       row.navIcons
         .col-xs-4.col-xs-offset-2.col-md-2.col-md-offset-4
           a(href='https://linkedin.com/in/alistim')
