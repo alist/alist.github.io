@@ -35,7 +35,7 @@ a
   background-position center center
 
 .navIcons div
-  margin-top 10px
+  margin-top 20px
   height 30px
   background-color clear
   background-repeat no-repeat
@@ -54,6 +54,9 @@ a
   background linear-gradient(bottom, rgba(255,255,255,.3),  100% rgba(0,0,0,0))
   height 40%
   width 100%
+
+.hidden
+  display none
 
 .fixBottom
   position fixed
@@ -91,17 +94,32 @@ h3
   &:hover
     opacity 0.7
 
-.audioBox
-  width 100%
-  height 210px
-
 .dim
-  opacity .5
-
-.controlLayer
   opacity .7
   &:hover
-    opacity 1
+    opacity .5
+
+.zbs
+  z-index 3
+
+.paused
+  background linear-gradient(bottom, rgba(0,0,0,.2),  100% rgba(0,0,0,.3))
+  position absolute
+  width 100%
+  height 100%
+  left 0%
+  top 0%
+
+.audioBox
+  width 100%
+  margin-top 25px
+  p
+    font-size 15px
+
+.controlLayer
+  opacity 1
+  height 128px
+  position relative
   width 100%
 
 .playBtn
@@ -109,16 +127,32 @@ h3
   background-repeat no-repeat
   background-size 128px
   background-position center center
+  position absolute
+  left 50%
+  top 50%
+  margin-top -64px
+  margin-left -64px
+  width 128px
+  height 128px
+  opacity 1
+  &:hover
+    opacity .7
 
 .pauseBtn
   background-image url("/img/pauseBtn2x.png")
   background-repeat no-repeat
   background-size 50px
-  background-position right bottom
+  background-position center center
+  position absolute
+  right 0%
+  bottom 0%
+  width 50px
+  height 50px
+  opacity 1
+  &:hover
+    opacity .7
 
 .audio
-  height 128px
-  width 100%
   background-color offwhite-color
-  p
-    font-size 15px
+  width 100%
+  height 100%

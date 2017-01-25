@@ -11,12 +11,17 @@ block body
       .row
         p.left=data[0]
         p.right
-          | Discuss it on 
-          a(href=data[2]) Dropbox
+          a(href=data[2]) Discuss on Dropbox
+      .row
+        p
+          i=data[3]
       .row
         a(href="#")
-          .controlLayer
-            .audio.playBtn.dim(id=data[1],waveformdata=data[3] ? data[3] : null)
+          .controlLayer(id=data[1])
+            .audio.dim
+            .paused.zbs.hidden
+            .playBtn.zbs
+            .pauseBtn.zbs.hidden
   -
     list = [["magnet", "http://usemagnet.com"], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
       ["headtalk", "http://headtalk.io"],
@@ -25,7 +30,7 @@ block body
       ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe"],
       ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"]]
     
-  - audioList = [["4 Hours in Tokyo (clip)","fourhoursintokyoclip","https://www.dropbox.com/s/fsnlc164id5d833/fourhoursintokyo.m4a"],["Grandma Nelson's Story: To California","gmatocalifornia"],["Grandma Nelson's Story: Willmington 10","gmawillmington10"], ["Grandma Nelson's Story: High School","gmahighschool"]]
+  - audioList = [["4 Hours in Tokyo (clip)","fourhoursintokyoclip","https://www.dropbox.com/s/fsnlc164id5d833/fourhoursintokyo.m4a","I had a few hours to pass through Tokyo NRT to HND airport recently. Here's the recording of my time, and some of the people I met. The full recording is at the Dropbox link."],["Grandma Nelson's Story: To California","gmatocalifornia","https://www.dropbox.com/s/hxwnspp3maww7bf/gmatocalifornia.m4a"],["Grandma Nelson's Story: Willmington 10","gmawillmington10","https://www.dropbox.com/s/rwxfdzhtsmx1yx4/gmawillmington10.m4a"], ["Grandma Nelson's Story: High School","gmahighschool","https://www.dropbox.com/s/tmjej4bhoyticyn/gmahighschool.m4a"]]
     
   .hundeepiece.stardust
     .fixBottom.aurora

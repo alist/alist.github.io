@@ -26,17 +26,26 @@ $(document).ready(function(){
     function clickAudio(a){
       var name = a.currentTarget.id;
       function then(waveformData){
-        waves[name] = makeWave('#' + a.currentTarget.id,'/files/' + name +'.m4a', waveformData);
+        waves[name] = makeWave('#' + a.currentTarget.id + ' > .audio','/files/' + name +'.m4a', waveformData);
         waves[name].on('ready',function(){
           waves[name].play();
         });
         waves[name].on('pause',function(){
-          $('#'+name).addClass('playBtn');
-          $('#'+name).removeClass('pauseBtn');
+          $('#'+name + '> .paused').removeClass('hidden');
+          $('#'+name + '> .pauseBtn').addClass('hidden');
+          $('#'+name + '> .playBtn').removeClass('hidden');
         });
         waves[name].on('play',function(){
-          $('#'+name).removeClass('playBtn');
-          $('#'+name).addClass('pauseBtn');
+          $('#'+name + '> .audio').removeClass('dim');
+          $('#'+name + '> .paused').addClass('hidden');
+          $('#'+name + '> .pauseBtn').removeClass('hidden');
+          $('#'+name + '> .playBtn').addClass('hidden');
+        });
+        $('#'+name + '> .pauseBtn').click(function(){
+          waves[name].pause(); return false;
+        });
+        $('#'+name + '> .playBtn').click(function(){
+          waves[name].play(); return false;
         });
       }
       if (!waves[name]) {
