@@ -86,13 +86,33 @@ h3
   margin-top 30px
 
 .piece
-  padding 10px
+  margin 10px
+  background-size 100%
+  background-repeat no-repeat
+  background-position center center
+  background-size fill
 
 .piece img
   width 100%
   height auto
+  visibility hidden
   &:hover
     opacity 0.7
+
+.magnet
+  background-image url("/img/magnet.jpg")
+  &:hover
+    background-image url("/img/magnet.gif")
+
+.swyp
+  background-image url("/img/swyp.jpg")
+  &:hover
+    background-image url("/img/swyp.gif")
+
+.mosaic
+  background-image url("/img/mosaic.jpg")
+  &:hover
+    background-image url("/img/mosaic.gif")
 
 .dim
   opacity .7
