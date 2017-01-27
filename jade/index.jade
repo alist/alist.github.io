@@ -3,7 +3,7 @@ extends layout
 block body
   mixin piece(data)
     a(href=data[1])
-      div.col-md-6.col-sm-12
+      div.col-md-6.col-sm-12(class=data[3])
         .piece(class=data[0], style=data[2]? "" : "background-image: url(/img/#{data[0]}.jpg);")
           image(src="./img/#{data[0]}.jpg")
 
@@ -30,11 +30,11 @@ block body
             .pauseBtn.zbs.hidden
   -
     list = [["magnet", "http://usemagnet.com", true], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
-      ["headtalk", "http://headtalk.io"],
-      ["knock", "https://github.com/headtalk/knock"], 
-      ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/", true], 
+      ["headtalk", "http://headtalk.io", false],
+      ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/", true, "col-md-push-6"], 
+      ["knock", "https://github.com/headtalk/knock", false, "col-md-pull-6"], 
       ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe", true],
-      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"]]
+      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"], false]
     
   - audioList = [["4 Hours in Tokyo (clip)","fourhoursintokyoclip","https://www.dropbox.com/s/fsnlc164id5d833/fourhoursintokyo.m4a","I had a few hours to pass through Tokyo NRT to HND airport recently. Here's the recording of my time, and some of the people I met. The full recording is at the Dropbox link."],["Grandma Nelson's Story: To California","gmatocalifornia","https://www.dropbox.com/s/hxwnspp3maww7bf/gmatocalifornia.m4a"],["Grandma Nelson's Story: Willmington 10","gmawillmington10","https://www.dropbox.com/s/rwxfdzhtsmx1yx4/gmawillmington10.m4a"], ["Grandma Nelson's Story: High School","gmahighschool","https://www.dropbox.com/s/tmjej4bhoyticyn/gmahighschool.m4a"]]
     
