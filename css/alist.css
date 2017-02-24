@@ -85,8 +85,13 @@ a:hover {
 .right {
   float: right;
 }
-h3 {
-  margin-top: 30px;
+.mainHeader {
+  text-align: center;
+  margin-bottom: 0px;
+}
+.sectionHeader {
+  text-align: center;
+  margin-top: 35px;
 }
 .pieces {
   margin-top: 30px;

@@ -6,9 +6,20 @@ block body
       div.col-md-6.col-sm-12(class=data[3])
         .piece(class=data[0], style=data[2]? "" : "background-image: url(/img/#{data[0]}.jpg);")
           image(src="./img/#{data[0]}.jpg")
+  
+  mixin video(data)
+    .row(id=data[1])
+      .left
+        p.left
+          =data[0]
+          .share
+            a(href="##{data[1]}", title="share") __
+    .row
+      .embed-responsive.embed-responsive-16by9
+        iframe.embed-responsive-item(src=data[2])
 
   mixin audio(data)
-    .audioBox
+    .audioBox(id=data[1])
       .row
           .left
             p.left
@@ -23,7 +34,7 @@ block body
           i=data[3]
       .row
         a(href="#")
-          .controlLayer(id=data[1])
+          .controlLayer
             .audio.dim
             .paused.zbs.hidden
             .playBtn.zbs
@@ -38,24 +49,34 @@ block body
     
   - audioList = [["4 Hours in Tokyo (clip)","fourhoursintokyoclip","https://www.dropbox.com/s/fsnlc164id5d833/fourhoursintokyo.m4a","I had a few hours to pass through Tokyo NRT to HND airport recently. Here's the recording of my time, and some of the people I met. The full recording is at the Dropbox link."],["Grandma Nelson's Story: To California","gmatocalifornia","https://www.dropbox.com/s/hxwnspp3maww7bf/gmatocalifornia.m4a"],["Grandma Nelson's Story: Willmington 10","gmawillmington10","https://www.dropbox.com/s/rwxfdzhtsmx1yx4/gmawillmington10.m4a"], ["Grandma Nelson's Story: High School","gmahighschool","https://www.dropbox.com/s/tmjej4bhoyticyn/gmahighschool.m4a"]]
     
+  - videoList = [["Magnet App Demo Reel", "magnetdemoreel", "https://www.youtube.com/embed/vwkm83U0g0o"]]
+  
   .hundeepiece.stardust
     .fixBottom.aurora
     .container.content
       row
         div.col-md-10.col-md-offset-1
-          h2.center Alexander Hoekje List
-          h3.center My Work
+          h2.mainHeader Alexander Hoekje List
+          h3.sectionHeader My Work
           .pieces
             for index in [[0,1], [2,3], [4,5]]
               row
                 for i in index
                   +piece(list[i])
+
+      row
+        div.col-md-10.col-md-offset-1
+          h3.sectionHeader Video Clips
+          for clip in videoList
+            +video(clip)
+            
       row
         div.col-md-10.col-md-offset-1         
-          h3.center Audio Clips
+          h3.sectionHeader Audio Clips
           for clip in audioList
             +audio(clip)
-            
+        
+      //- coming soon    
       //- row
       //-   div.col-md-10.col-md-offset-1
       //-     h3.center Photos
