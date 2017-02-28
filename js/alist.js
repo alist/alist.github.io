@@ -17,7 +17,6 @@ var makeWave = function(id, filename, waveformData){
 };
 
 $(document).ready(function(){
-  console.log($('#5hrstokyo'));
     var ctx = document.createElement('canvas').getContext('2d');
     linGrad = ctx.createLinearGradient(0, 64, 0, 200);
     linGrad.addColorStop(0.5, 'rgba(255, 255, 255, 1.000)');
