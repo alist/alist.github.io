@@ -9,3 +9,4 @@ alist's github pages
 `stylus styl/alist.styl -w -o css/`
 
 tested locally using `python -m SimpleHTTPServer 3000`
+or  `npm install http-server -g` and `http-server .`
