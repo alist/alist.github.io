@@ -60,6 +60,7 @@ $(document).ready(function(){
       return false;
     }
 
+    $('#jun15plalistwmbr').click(clickAudio);
     $('#jun1plalistwmbr').click(clickAudio);
     $('#fourhoursintokyoclip').click(clickAudio);
     $('#gmahighschool').click(clickAudio);
