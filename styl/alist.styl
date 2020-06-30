@@ -95,7 +95,7 @@ a
   background-size 100%
   background-repeat no-repeat
   background-position center center
-  background-size fill
+  background-size cover
   &:hover
     opacity 0.7
 
@@ -123,6 +123,13 @@ a
   &:hover
     @media (min-width: screen-sm-min)
       background-image url("/img/mosaic.gif")
+      opacity 1
+
+.checklist
+  background-image url("/img/checklist.jpg")
+  &:hover
+    @media (min-width: screen-sm-min)
+      background-image url("/img/checklist.gif")
       opacity 1
 
 .dim

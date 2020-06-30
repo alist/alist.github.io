@@ -3,7 +3,9 @@ extends layout
 block body
   mixin piece(data)
     a(href=data[1])
+      //- Data[3] is for extra css e.g. pull pushes
       div.col-md-6.col-sm-12(class=data[3])
+        //- If data[2] is true, expect css to include this class in alist.styl
         .piece(class=data[0], style=data[2]? "" : "background-image: url(/img/#{data[0]}.jpg);")
           image(src="./img/#{data[0]}.jpg")
 
@@ -40,12 +42,15 @@ block body
             .playBtn.zbs
             .pauseBtn.zbs.hidden
   -
-    list = [["magnet", "http://usemagnet.com", true], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
+    list = [
+      ["mastersthesis", "https://dspace.mit.edu/bitstream/handle/1721.1/122033/ICAT-2019-12_List%2c%20Alex.pdf?sequence=1&isAllowed=y", false],
+      ["checklist", "https://www.youtube.com/watch?v=WTW8HbnEK-w&list=PLbGg0dWfeEZuKKeUtlHhYtbBvO9TfU5Hj&index=1", true],
+      ["magnet", "http://usemagnet.com", true], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
       ["headtalk", "http://headtalk.io", false],
-      ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/", true, "col-md-push-6"],
-      ["knock", "https://github.com/headtalk/knock", false, "col-md-pull-6"],
+      ["knock", "https://github.com/headtalk/knock", false],
+      ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/", true],
       ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe", true],
-      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf"], false]
+      ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf", false]]
 
 
   //- Don't forget to update alist.js with name of clip
@@ -67,7 +72,7 @@ block body
           h2.mainHeader Alexander Hoekje List
           h3.sectionHeader My Work
           .pieces
-            for index in [[0,1], [2,3], [4,5]]
+            for index in [[0,1], [2,3], [4,5], [6,7]]
               row
                 for i in index
                   +piece(list[i])
