@@ -6,8 +6,8 @@ block body
       //- Data[3] is for extra css e.g. pull pushes
       div.col-md-6.col-sm-12(class=data[3])
         //- If data[2] is true, expect css to include this class in alist.styl
-        .piece(class=data[0], style=data[2]? "" : "background-image: url(/img/#{data[0]}.jpg);")
-          image(src="./img/#{data[0]}.jpg")
+        .piece(class=data[0], style=data[2]? "" : "background-image: url(/img/" + data[0] + ".jpg);")
+          image(src="./img/" + data[0] + ".jpg")
 
   mixin video(data)
     .row(id=data[1])
@@ -15,7 +15,7 @@ block body
         p.left
           =data[0]
           .share
-            a(href="##{data[1]}", title="share") __
+            a(href=data[1], title="share") __
     .row
       .embed-responsive.embed-responsive-16by9
         iframe.embed-responsive-item(src=data[2])
@@ -23,11 +23,11 @@ block body
   mixin audio(data)
     .audioBox(id=data[1])
       .row
-          .left
-            p.left
-              =data[0]
-              .share
-                a(href="##{data[1]}", title="share") __
+        .left
+          p.left
+            =data[0]
+            .share
+              a(href=data[1], title="share") __
 
         p.right
           a(href=data[2]) Discuss on Dropbox
@@ -72,21 +72,21 @@ block body
           h2.mainHeader Alexander Hoekje List
           h3.sectionHeader My Work
           .pieces
-            for index in [[0,1], [2,3], [4,5], [6,7]]
+            each index in [[0,1], [2,3], [4,5], [6,7]]
               row
-                for i in index
+                each i in index
                   +piece(list[i])
 
       row
         div.col-md-10.col-md-offset-1
           h3.sectionHeader Video Clips
-          for clip in videoList
+          each clip in videoList
             +video(clip)
 
       row
         div.col-md-10.col-md-offset-1
           h3.sectionHeader Audio Clips
-          for clip in audioList
+          each clip in audioList
             +audio(clip)
 
       //- coming soon

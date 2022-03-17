@@ -5,12 +5,13 @@ doctype html
 html
   head
     title alist.im
+    meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
     link(href='https://fonts.googleapis.com/css?family=Yantramanav:100', rel='stylesheet', type='text/css')
     for s in styles
-      link(rel='stylesheet', href='#{s}')
+      link(rel='stylesheet', href=s)
     for s in scripts
-      script(src='#{s}')
+      script(src=s)
 
   body
     block body
