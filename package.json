@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "nib": "^1.2.0",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.59.0"
+  }
+}
