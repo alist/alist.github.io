@@ -1,20 +1,31 @@
 # alist.github.io
-alist's github pages
+
+[alist.im website](https://alist.im)
 
 ## Setup
-Jade is now Pug:
-- `npm install -g pug`
-- `npm install -g pug-cli`
+
+`npm install .`
+
+### Manual setup
+
+Pug (Jade is now Pug):
+- `npm install pug`
+- `npm install pug-cli`
 
 Stylus and the nib package are needed:
-- `npm install -g stylus`
-- `npm install -g nib`
+- `npm install stylus`
+- `npm install nib`
 
+Update the path variable, each time you want to use:
+- `PATH=$(npm bin):$PATH`
+- Or I would permanently alias it: `alias nodebin='PATH=$(npm bin):$PATH'`
 
 ## Compilation
 - `pug jade/*.jade -w --out .`
 - `stylus styl/alist.styl -w -o css/`
 
-Tested locally using `python -m SimpleHTTPServer 3000`, but `SimpleHTTPServer` has trouble when trying to serve large media files.
+## Running
 
-An alternative is `npm install http-server -g` and `http-server .`.
+I rcommend `http-server .` (Hand-install: `npm install http-server -g`).
+
+Tested locally using `python -m SimpleHTTPServer 3000`, but `SimpleHTTPServer` has trouble when trying to serve large media files.

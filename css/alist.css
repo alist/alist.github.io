@@ -24,8 +24,6 @@ a:hover {
 .stardust {
   background-image: url("/img/stardust.png");
   background-repeat: repeat;
-  -webkit-background-size: 399px;
-  -moz-background-size: 399px;
   background-size: 399px;
   background-position: center center;
 }
@@ -35,8 +33,6 @@ a:hover {
   background-color: clear;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
   background-size: contain;
 }
 .navIcons div:hover {
@@ -99,13 +95,9 @@ a:hover {
 }
 .piece {
   margin: 10px;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
 }
 .piece:hover {
@@ -177,8 +169,6 @@ a:hover {
 }
 .share {
   background-image: url("/img/shareBtn2x.png");
-  -webkit-background-size: 15px;
-  -moz-background-size: 15px;
   background-size: 15px;
   background-repeat: no-repeat;
   width: 15px;
@@ -225,8 +215,6 @@ a:hover {
 .playBtn {
   background-image: url("/img/playBtn2x.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 128px;
-  -moz-background-size: 128px;
   background-size: 128px;
   background-position: center center;
   position: absolute;
@@ -248,8 +236,6 @@ a:hover {
 .pauseBtn {
   background-image: url("/img/pauseBtn2x.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 50px;
-  -moz-background-size: 50px;
   background-size: 50px;
   background-position: center center;
   position: absolute;
@@ -274,13 +260,9 @@ a:hover {
 .evs {
   height: 500px;
   position: relative;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-background-size: fill;
-  -moz-background-size: fill;
   background-size: fill;
 }
 .evsHeader {

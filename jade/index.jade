@@ -27,14 +27,14 @@ block body
           p.left
             =data[0]
             .share
-              a(href=data[1], title="share") __
+              a(href="#" + data[1], title="share") __
 
         p.right
           a(href=data[2]) Discuss on Dropbox
       .row
         p
           i=data[3]
-      .row
+      .row.player
         a(href="#")
           .controlLayer
             .audio.dim
@@ -45,20 +45,20 @@ block body
     list = [
       ["mastersthesis", "https://dspace.mit.edu/bitstream/handle/1721.1/122033/ICAT-2019-12_List%2c%20Alex.pdf?sequence=1&isAllowed=y", false],
       ["checklist", "https://www.youtube.com/watch?v=WTW8HbnEK-w&list=PLbGg0dWfeEZuKKeUtlHhYtbBvO9TfU5Hj&index=1", true],
-      ["magnet", "http://usemagnet.com", true], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
-      ["headtalk", "http://headtalk.io", false],
+      ["magnet", "https://web.archive.org/web/20201201084914/http://www.usemagnet.com/", true], //-https://www.youtube.com/watch?v=vwkm83U0g0o on hover play (or gif)
+      ["headtalk", "https://web.archive.org/web/20210122215338/http://www.headtalk.io/", false],
       ["knock", "https://github.com/headtalk/knock", false],
       ["mosaic", "http://techcrunch.com/2013/04/02/mosaic-lets-you-weave-a-single-display-from-multiple-iphones-and-ipads-offers-sdk-for-developers/", true],
-      ["swyp", "http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe", true],
+      ["swyp", "https://web.archive.org/web/20161222054748/http://www.fastcodesign.com/1669697/it-exists-mit-creates-tech-for-moving-files-across-devices-with-a-swipe", true],
       ["telepathy", "http://alist.github.com/files/Headtalk Pragmatic Annotated Slides.pdf", false]]
 
 
   //- Don't forget to update alist.js with name of clip
   -
-    audioList = [["Plalist Episode Two, WMBR 88.1 Cambridge (clip)","jun15plalistwmbr","https://www.dropbox.com/s/k1e8m1uuou9x1y6/jun15plalistwmbr.m4a","More great tracks. Full recording is at the Dropbox link."],
-      ["Plalist (sic) Episode One, WMBR 88.1 Cambridge (clip)","jun1plalistwmbr","https://www.dropbox.com/s/ernaauxtvtst5gi/jun1plalistwmbr.m4a","First episode of my radio show on MIT's WMBR, featuring techno. Aired just a few hours after getting back from Berlin :) The full recording is at the Dropbox link."],
+    audioList = [["Plalist Episode Two, WMBR 88.1 Cambridge (clip)","jun15plalistwmbr","https://www.dropbox.com/s/k1e8m1uuou9x1y6/jun15plalistwmbr.m4a","Full recording is at the Dropbox link."],
+      ["Plalist (sic) Episode One, WMBR 88.1 Cambridge (clip)","jun1plalistwmbr","https://www.dropbox.com/s/ernaauxtvtst5gi/jun1plalistwmbr.m4a","First episode of my radio show on MIT's WMBR. Aired just a few hours after getting back from Berlin :) The full recording is at the Dropbox link."],
       ["4 Hours in Tokyo (clip)","fourhoursintokyoclip","https://www.dropbox.com/s/fsnlc164id5d833/fourhoursintokyo.m4a","I had a few hours to pass through Tokyo NRT to HND airport recently. Here's the recording of my time, and some of the people I met. The full recording is at the Dropbox link."],
-      ["Grandma Nelson's Story: To California","gmatocalifornia","https://www.dropbox.com/s/hxwnspp3maww7bf/gmatocalifornia.m4a"],
+      ["Grandma Nelson's Story: To California","gmatocalifornia","https://www.dropbox.com/s/hxwnspp3maww7bf/gmatocalifornia.m4a", "My grandmother passed in 2018. She was a woman's liberation activist, and I always appreciated her stories. This one is how she got to California."],
       ["Grandma Nelson's Story: Willmington 10","gmawillmington10","https://www.dropbox.com/s/rwxfdzhtsmx1yx4/gmawillmington10.m4a"],
       ["Grandma Nelson's Story: High School","gmahighschool","https://www.dropbox.com/s/tmjej4bhoyticyn/gmahighschool.m4a"]]
 

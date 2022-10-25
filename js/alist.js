@@ -1,69 +1,65 @@
 var waves = {};
 var lingrad = null;
 
-var makeWave = function(id, filename, waveformData){
+var makeWave = function(containerId, filename){
   var wavesurfer = WaveSurfer.create({
-    container: id,
+    container: containerId,
     backend : 'MediaElement',
-    waveColor: linGrad,
+    waveColor: linearGradient,
     progressColor: 'hsla(200, 100%, 30%, 0.5)',
     minPxPerSec	: 0,
     maxCanvasWidth : 1000,
     cursorColor: '#fff',
     barWidth: 3
   });
-  wavesurfer.load(filename,waveformData);
+  wavesurfer.load(filename, null);
   return wavesurfer;
 };
 
 $(document).ready(function(){
     var ctx = document.createElement('canvas').getContext('2d');
-    linGrad = ctx.createLinearGradient(0, 64, 0, 200);
-    linGrad.addColorStop(0.5, 'rgba(255, 255, 255, 1.000)');
-    linGrad.addColorStop(0.5, 'rgba(183, 183, 183, 1.000)');
+    linearGradient = ctx.createLinearGradient(0, 64, 0, 200);
+    linearGradient.addColorStop(0.5, 'rgba(255, 255, 255, 1.000)');
+    linearGradient.addColorStop(0.5, 'rgba(183, 183, 183, 1.000)');
 
-    function clickAudio(a){
-      var name = a.currentTarget.id;
-      function then(waveformData){
-        waves[name] = makeWave('#' + a.currentTarget.id + ' .audio','/files/' + name +'.m4a', waveformData);
-        waves[name].on('ready',function(){
-          waves[name].play();
+    function setupWavePlayerOnClick(clickedElement){
+      var waveName = clickedElement.currentTarget.parentElement.id;
+      var audioElement = $(clickedElement.currentTarget).find(".audio").get()[0];
+      
+      function loadWaveAndSetCallbacks(){
+        waves[waveName] = makeWave(audioElement, '/files/' + waveName +'.m4a');
+        waves[waveName].on('ready',function(){
+          waves[waveName].play();
         });
-        waves[name].on('pause',function(){
-          $('#'+name + ' .paused').removeClass('hidden');
-          $('#'+name + ' .pauseBtn').addClass('hidden');
-          $('#'+name + ' .playBtn').removeClass('hidden');
+        waves[waveName].on('pause',function(){
+          $('#' + waveName + ' .paused').removeClass('hidden');
+          $('#' + waveName + ' .pauseBtn').addClass('hidden');
+          $('#' + waveName + ' .playBtn').removeClass('hidden');
         });
-        waves[name].on('play',function(){
-          $('#'+name + ' .audio').removeClass('dim');
-          $('#'+name + ' .paused').addClass('hidden');
-          $('#'+name + ' .pauseBtn').removeClass('hidden');
-          $('#'+name + ' .playBtn').addClass('hidden');
+        waves[waveName].on('play',function(){
+          $('#' + waveName + ' .audio').removeClass('dim');
+          $('#' + waveName + ' .paused').addClass('hidden');
+          $('#' + waveName + ' .pauseBtn').removeClass('hidden');
+          $('#' + waveName + ' .playBtn').addClass('hidden');
+        }) ; 
+        $('#' + waveName + ' .pauseBtn').click(function(){
+          waves[waveName].pause(); return false;
         });
-        $('#'+name + ' .pauseBtn').click(function(){
-          waves[name].pause(); return false;
-        });
-        $('#'+name + ' .playBtn').click(function(){
-          waves[name].play(); return false;
+        $('#' + waveName + ' .playBtn').click(function(){
+          waves[waveName].play(); return false;
         });
       }
-      if (!waves[name]) {
-        var waveformData = a.currentTarget.getAttribute('waveformdata');
-        if (waveformData){
-          $.getJSON(waveformData, function(data){ then(data); });
-        } else {
-          then();
-        }
-      } else {
-        // waves[name].playPause();
+
+      if (!waves[waveName]) {
+        loadWaveAndSetCallbacks();
       }
       return false;
     }
 
-    $('#jun15plalistwmbr').click(clickAudio);
-    $('#jun1plalistwmbr').click(clickAudio);
-    $('#fourhoursintokyoclip').click(clickAudio);
-    $('#gmahighschool').click(clickAudio);
-    $('#gmatocalifornia').click(clickAudio);
-    $('#gmawillmington10').click(clickAudio);
-});
+    let idList = ["jun15plalistwmbr", "jun1plalistwmbr", "fourhoursintokyoclip", "gmahighschool", "gmatocalifornia", "gmawillmington10"];
+    idList.forEach((playerSectionId) => {
+      let playerElement = $("#" + playerSectionId).find(".player");
+      playerElement.click(setupWavePlayerOnClick);
+    });
+  
+  });
