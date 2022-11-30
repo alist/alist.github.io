@@ -46,6 +46,9 @@ a:hover {
 .twitterBG {
   background-image: url("/img/twitter2x.png");
 }
+.githubBG {
+  background-image: url("/img/github2x.png");
+}
 .aurora {
   background: -webkit-linear-gradient(bottom, rgba(255,255,255,0.3), rgba(0,0,0,0) 100%);
   background: -moz-linear-gradient(bottom, rgba(255,255,255,0.3), rgba(0,0,0,0) 100%);
